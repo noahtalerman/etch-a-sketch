@@ -1,11 +1,11 @@
-const body = document.querySelector('body');
-body.style.display = 'flex';
-body.style.justifyContent = 'center';
-body.style.alignItems = 'center';
-
 const container = document.querySelector('.container');
 container.style.display = 'flex';
 container.style.justifyContent = 'center';
+container.style.alignItems = 'center';
+
+const gridContainer = document.querySelector('.grid-container');
+gridContainer.style.display = 'flex';
+gridContainer.style.justifyContent = 'center';
 
 const createRow = () => {
     for (let i = 0; i < 4; i++) {
@@ -16,7 +16,7 @@ const createRow = () => {
         // if (i !== 0){
         //     sqr.style.borderLeft = '0px';
         // }
-        container.appendChild(sqr);
+        gridContainer.appendChild(sqr);
     }
 }
 
@@ -28,7 +28,7 @@ const createLastRow = () => {
         // if (i !== 0){
         //     sqr.style.borderLeft = '0px';
         // }
-        container.appendChild(sqr);
+        gridContainer.appendChild(sqr);
     }
 }
 let numRows = 1;
@@ -40,15 +40,16 @@ createLastRow();
 
 let sqrWidth = document.querySelector('.square').getBoundingClientRect().width;
 let rowWidth = (numRows) * sqrWidth;
-container.style.width = rowWidth;
-container.style.flexWrap = 'wrap';
+gridContainer.style.width = rowWidth;
+gridContainer.style.flexWrap = 'wrap';
 console.log(rowWidth);
 
 const resizeRow = () => {
     sqrWidth = document.querySelector('.square').getBoundingClientRect().width;
     rowWidth = (numRows) * sqrWidth;
-    container.style.width = rowWidth;
+    gridContainer.style.width = rowWidth;
 }
+const body = document.querySelector('body');
 body.onresize = resizeRow;
 
 sqrs = document.querySelectorAll('.square');
@@ -63,3 +64,14 @@ sqrs.forEach(sqr => sqr.addEventListener('mouseenter', function(){
     this.classList.toggle('active');
     resizeRow();
 }));
+
+const clearBoard = () => {
+    sqrs.forEach(sqr => sqr.classList.remove('active'));
+    sqrs.forEach(sqr => sqr.classList.add('inactive'));
+}
+
+refreshBtn = document.querySelector('.refresh-btn');
+
+refreshBtn.addEventListener('click', function() {
+    clearBoard();
+});
