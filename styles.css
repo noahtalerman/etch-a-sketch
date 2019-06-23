@@ -2,16 +2,16 @@
     width: 6vw;
     height: 6vw;
     max-width: 6.5vw;
-    max-height: 6.5vw
+    max-height: 6.5vw;
 }
 
 .inactive {
 
-    border: 1px solid #d4bff9;
+    border: 1px solid #dfdfdf;
     background:#ffffff;
 }
 
 .active {
     border: 1px solid var(--element-border);
-    background: var(--element-background);d
+    background: var(--element-background);
 }

@@ -61,4 +61,5 @@ sqrs.forEach(sqr => sqr.addEventListener('mouseenter', function(){
     this.style.setProperty('--element-border', random_color);
     this.classList.toggle('inactive');
     this.classList.toggle('active');
+    resizeRow();
 }));
