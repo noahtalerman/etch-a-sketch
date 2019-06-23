@@ -8,7 +8,7 @@ container.style.display = 'flex';
 container.style.justifyContent = 'center';
 
 const createRow = () => {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 4; i++) {
         const sqr = document.createElement('div');
         sqr.classList.add('square');
         sqr.classList.add('inactive');
@@ -21,7 +21,7 @@ const createRow = () => {
 }
 
 const createLastRow = () => {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 4; i++) {
         const sqr = document.createElement('div');
         sqr.classList.add('square');
         sqr.classList.add('inactive');
@@ -32,7 +32,7 @@ const createLastRow = () => {
     }
 }
 let numRows = 1;
-for (let i = 0; i < 7; i++) {
+for (let i = 0; i < 3; i++) {
     createRow();
     ++numRows;
 }

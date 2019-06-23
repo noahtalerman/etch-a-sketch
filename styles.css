@@ -13,5 +13,5 @@
 
 .active {
     border: 1px solid var(--element-border);
-    background: var(--element-background);
+    background: var(--element-background);d
 }
