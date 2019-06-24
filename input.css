@@ -80,7 +80,8 @@
 	position: relative;
 	width: 60%;
 	color: #000000;
-	text-align: left;
+    text-align: left;
+    transition: all linear 1s;
 }
 
 .input__label--yoko::before {

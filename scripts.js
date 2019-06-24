@@ -75,3 +75,15 @@ refreshBtn = document.querySelector('.refresh-btn');
 refreshBtn.addEventListener('click', function() {
     clearBoard();
 });
+
+const inputLabel = document.querySelector('.input__label-content');
+const inputBox = document.querySelector('.input');
+
+document.addEventListener('click', function(e) {
+    let isClickInside = inputBox.contains(e.target);
+    inputLabel.textContent = 'Enter an integer between 2 & 16';
+    if (!isClickInside) {
+        inputLabel.textContent = 'Height x Width'
+    }
+});
+
